@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {  HeroSection, FeaturedCourses, WhyChooseUs, HowItWorks, Testimonials, Instructors, Pricing, FAQ, CTA, Footer } from '../components/index';
+import {  HeroSection, FeaturedCourses, WhyChooseUs, HowItWorks, Testimonials, Instructors, Pricing, FAQ, CTA, Footer } from '../../components/index';
+import useTheme from '../../hooks/useTheme';
 
-export default function LandingPage({ theme }) {
-  const [showLogin, setShowLogin] = useState(false);
+export default function LandingPage() {
+  const { theme } = useTheme();
   return (
     <div>
       {/* <Navbar onLoginClick={() => setShowLogin(true)}/> */}

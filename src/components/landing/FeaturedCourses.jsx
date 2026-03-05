@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { courses } from "../../assets/data/courses";
+import { courses } from "../../assets/courses";
 
 export default function FeaturedCourses({ theme }) {
   const sliderRef = useRef(null);

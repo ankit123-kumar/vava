@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Menu, X, Sun, Moon, Mail, Lock, User } from "lucide-react";
+import { Menu, X, Sun, Moon} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import useTheme from "../../hooks/useTheme";
 
-export default function Navbar({ toggleTheme, currentTheme }) {
+export default function Navbar() {
+  const { theme: currentTheme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const handleToggle = () => setIsOpen(!isOpen);
@@ -23,7 +25,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
             alt="VAVA Logo"
             className="h-12 w-12 object-contain drop-shadow-sm"
           />
-          <h1 className="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-purple-500 to-yellow-400">
+          <h1 className="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-green-400 via-purple-500 to-yellow-400">
             VAVA
           </h1>
         </div>
