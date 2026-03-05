@@ -3,7 +3,7 @@ import { GraduationCap, Users, Target, BookOpen } from "lucide-react";
 import useTheme from "../../hooks/UseTheme";
 
 export default function AboutPage() {
-  const [theme] = useTheme();
+  const {theme} = useTheme();
   const mentors = [
     {
       name: "Ankit Sharma",

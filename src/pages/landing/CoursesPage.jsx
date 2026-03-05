@@ -2,7 +2,7 @@ import { useState } from "react";
 import useTheme from "../../hooks/UseTheme";
 
 export default function CoursesPage() {
-  const [theme] = useTheme();
+  const {theme} = useTheme();
   const [courses] = useState([
     {
       id: 1,

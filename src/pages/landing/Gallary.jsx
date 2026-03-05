@@ -37,7 +37,7 @@ const galleryData = [
 export default function Gallery() {
   const [active, setActive] = useState("all");
   const [selected, setSelected] = useState(null);
-  const [theme] = useTheme();
+  const {theme} = useTheme();
 
   const isDark = theme === "dark";
 

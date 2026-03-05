@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import useTheme from "../../hooks/UseTheme";
 
 export default function ContactPage() {
-  const [theme] = useTheme();
+  const {theme} = useTheme();
   const isDark = theme === "dark";
 
   return (
