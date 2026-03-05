@@ -70,7 +70,7 @@ function App() {
 
             <Route path="/auth" element={<AuthCard />} />
 
-            {/* <Route element={<ProtectedRoute allowedRole="STUDENT" />}> */}
+            <Route element={<ProtectedRoute allowedRole="STUDENT" />}>
 
               <Route path="dashboard" element={<StudentDashboard />} />
               {/* Tests Section */}
@@ -88,7 +88,7 @@ function App() {
               <Route path="analytics" element={<Analytics />} />
               <Route path="profile" element={<Profile />} />
 
-            {/* </Route> */}
+            </Route>
 
 
             {/* Student Pages */}
