@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FcGoogle as Google } from "react-icons/fc";
 import "./AuthCard.css";
-// import { API_ENDPOINTS } from "../../utils/ApiEndpoint";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const EyeIcon = ({ open }) => (
   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -60,40 +60,42 @@ export default function AuthCard({ defaultTab = "signup", theme = "light" }) {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [remember, setRemember] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const set = (key) => (e) => setForm(f => ({ ...f, [key]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
 
-    try {
-      if (tab === "signup") {
-        const response = await axios.post(API_ENDPOINTS.auth.signup, form);
-        if(response.status === 201) {
-          alert("Registration successful! Please log in.");
-          setTab("login");
-          setShowPw(false);
-        } else {
-          alert("Registration failed. Please try again.");
-        }
-      } else {
-        const response = await axios.post(API_ENDPOINTS.auth.login, form);
-        if(response.status === 200) {
-          alert("Login successful! Welcome back.");
-          localStorage.setItem("accessToken", response.data.accessToken);
-          localStorage.setItem("refreshToken", response.data.refreshToken);
-          // Redirect to dashboard or home page
-          window.location.href = "/dashboard";
-        } else {
-          alert("Login failed. Please check your credentials and try again.");
-        }
-      }
-    } catch (error) {
-      console.error("Authentication error:", error);
-      alert(error.response?.data?.message || "An error occurred. Please try again.");
-    }
-    setLoading(false);
+    // try {
+    //   if (tab === "signup") {
+    //     const response = await axios.post(API_ENDPOINTS.auth.signup, form);
+    //     if(response.status === 201) {
+    //       alert("Registration successful! Please log in.");
+    //       setTab("login");
+    //       setShowPw(false);
+    //     } else {
+    //       alert("Registration failed. Please try again.");
+    //     }
+    //   } else {
+    //     const response = await axios.post(API_ENDPOINTS.auth.login, form);
+    //     if(response.status === 200) {
+    //       alert("Login successful! Welcome back.");
+    //       localStorage.setItem("accessToken", response.data.accessToken);
+    //       localStorage.setItem("refreshToken", response.data.refreshToken);
+    //       // Redirect to dashboard or home page
+    //       window.location.href = "/dashboard";
+    //     } else {
+    //       alert("Login failed. Please check your credentials and try again.");
+    //     }
+    //   }
+    // } catch (error) {
+    //   console.error("Authentication error:", error);
+    //   alert(error.response?.data?.message || "An error occurred. Please try again.");
+    // }
+    // setLoading(false);
+    navigate("/dashboard")
   };
 
   return (
