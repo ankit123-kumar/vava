@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {  HeroSection, FeaturedCourses, WhyChooseUs, HowItWorks, Testimonials, Instructors, Pricing, FAQ, CTA, Footer } from '../../components/index';
-import useTheme from '../../hooks/useTheme';
+import useTheme from "../../hooks/useTheme";
 
 export default function LandingPage() {
   const { theme } = useTheme();
