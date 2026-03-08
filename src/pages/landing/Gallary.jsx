@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import useTheme from "../../hooks/UseTheme";
-
+import useTheme from "../../hooks/useTheme";
 const galleryData = [
   {
     id: 1,
