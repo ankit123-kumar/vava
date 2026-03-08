@@ -5,7 +5,7 @@ import UpcomingTestCard from "../../components/upcoming-tests/UpcomingTestCard";
 import UpcomingTestSkeleton from "../../components/upcoming-tests/UpcomingTestSkeleton";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 function Upcoming() {
   const {theme} = useTheme();

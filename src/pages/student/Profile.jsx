@@ -7,7 +7,7 @@ import ChangePasswordForm from "../../components/profile/ChangePasswordForm";
 import TestStats from "../../components/profile/TestStats";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 function Profile() {
   const {theme} = useTheme();

@@ -6,7 +6,7 @@ import QuestionReview from "../../components/test-result/QuestionReview";
 import ResultSkeleton from "../../components/test-result/ResultSkeleton";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 function Result() {
   const {theme} = useTheme();

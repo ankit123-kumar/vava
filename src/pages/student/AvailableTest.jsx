@@ -5,7 +5,7 @@ import TestCard from "../../components/tests/TestCard";
 import TestFilters from "../../components/tests/TestFilters";
 import TestPagination from "../../components/tests/TestPagination";
 import TestSkeleton from "../../components/tests/TestSkeleton";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 import { dashboardTheme } from "../../themes/theme";
 
 function AvailableTests() {

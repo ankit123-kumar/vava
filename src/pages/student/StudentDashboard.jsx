@@ -6,7 +6,7 @@ import StatCard from "../../components/dashboard/StatCard";
 import UpcomingTestCard from "../../components/dashboard/UpcomingTestCard";
 import ResultTable from "../../components/dashboard/ResultTable";
 import PerformanceChart from "../../components/dashboard/PerformanceChart";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 import { dashboardTheme } from "../../themes/theme";
 

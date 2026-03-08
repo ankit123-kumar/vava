@@ -7,7 +7,7 @@ import RankTrendChart from "../../components/analytics/RankTrendChart";
 import TopicStrength from "../../components/analytics/TopicStrength";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 function Analytics() {
   const {theme} = useTheme();

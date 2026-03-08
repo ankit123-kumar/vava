@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X, Sun, Moon} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 export default function Navbar() {
   const { theme: currentTheme, toggleTheme } = useTheme();

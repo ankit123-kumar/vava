@@ -3,7 +3,7 @@ import { Menu, Share2, X, Moon, Sun } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../hooks/UseTheme";
 import { dashboardTheme } from "../themes/theme";
 const SideMenu = Sidebar;
 

@@ -3,7 +3,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import InstructionCard from "../../components/test-instructions/InstructionCard";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../hooks/UseTheme";
 
 function TestInstructions() {
   const {theme} = useTheme();

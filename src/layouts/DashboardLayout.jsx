@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../hooks/UseTheme";
 const SideMenu = Sidebar;
 
 const DashboardLayout = ({ children, activeMenu }) => {
