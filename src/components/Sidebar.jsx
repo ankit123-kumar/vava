@@ -2,7 +2,7 @@ import { useState, forwardRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { User, ChevronDown } from "lucide-react";
 import { SIDE_MENU_DATA } from "../assets/data.js";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../hooks/useTheme.jsx";
 import { dashboardTheme } from "../themes/theme";
 
 const SideMenu = forwardRef((props, ref) => {
