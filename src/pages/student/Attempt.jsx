@@ -7,7 +7,7 @@ import QuestionPalette from "../../components/test-attempt/QuestionPalette";
 import AttemptNavigation from "../../components/test-attempt/AttemptNavigation";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/UseTheme";
+import useTheme from "../../hooks/useTheme";
 
 function TestAttempt() {
   const {theme} = useTheme();

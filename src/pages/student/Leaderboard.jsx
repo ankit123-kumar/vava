@@ -7,7 +7,7 @@ import LeaderboardTable from "../../components/leaderboard/LeaderBoardTable";
 import LeaderboardSkeleton from "../../components/leaderboard/LeaderBoardSkeleton";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/UseTheme";
+import useTheme from "../../hooks/useTheme";
 
 function Leaderboard() {
   const {theme} = useTheme();

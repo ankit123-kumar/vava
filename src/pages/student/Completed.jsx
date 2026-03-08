@@ -5,7 +5,7 @@ import CompletedTestCard from "../../components/completed-tests/CompletedTestCar
 import CompletedTestSkeleton from "../../components/completed-tests/CompletedTestSkeleton";
 
 import { dashboardTheme } from "../../themes/theme";
-import useTheme from "../../hooks/UseTheme";
+import useTheme from "../../hooks/useTheme";
 
 function CompletedTests() {
   const {theme} = useTheme();
