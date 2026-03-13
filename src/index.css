@@ -5,3 +5,18 @@
 .no-scrollbar {
   scrollbar-width: none;
 }
+
+/* global.css */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a78bfa;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
