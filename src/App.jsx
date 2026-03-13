@@ -21,7 +21,7 @@ import Analytics from "./pages/student/Analytics";
 import Profile from "./pages/student/Profile";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { ThemeProvider } from "./context/ThemeContext";
-import AdminDashboard from "./pages/admin/adminDashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 import AllTests from "./pages/admin/AllTests";
 import CreateTest from "./pages/admin/CreateTest";
 import TestSchedule from "./pages/admin/TestSchedule";
