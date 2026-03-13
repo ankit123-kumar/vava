@@ -21,6 +21,20 @@ import Analytics from "./pages/student/Analytics";
 import Profile from "./pages/student/Profile";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { ThemeProvider } from "./context/ThemeContext";
+import AdminDashboard from "./pages/admin/adminDashboard";
+import AllTests from "./pages/admin/AllTests";
+import CreateTest from "./pages/admin/CreateTest";
+import TestSchedule from "./pages/admin/TestSchedule";
+import AllQuestions from "./pages/admin/AllQuestions";
+import AddQuestion from "./pages/admin/AddQuestion";
+import ImportQuestions from "./pages/admin/ImportQuestions";
+import AllStudents from "./pages/admin/AllStudents";
+import StudentPerformance from "./pages/admin/StudentPerformance";
+import AdminResults from "./pages/admin/AdminResults";
+import AdminLeaderboard from "./pages/admin/AdminLeaderboard";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import Settings from "./pages/admin/Settings";
+import AdminProfile from "./pages/admin/AdminProfile";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -44,6 +58,7 @@ function App() {
     }
 
     localStorage.setItem("theme", theme);
+    localStorage.setItem("userroll", "ADMIN");
   }, [theme]);
 
   const toggleTheme = () => {
@@ -88,6 +103,30 @@ function App() {
               <Route path="analytics" element={<Analytics />} />
               <Route path="profile" element={<Profile />} />
 
+            </Route>
+
+            <Route element={<ProtectedRoute allowedRole="ADMIN" />}>
+              <Route path="admin/dashboard" element={<AdminDashboard />} />
+              {/* Tests Section */}
+              <Route path="admin/tests/all" element={<AllTests />} />
+              <Route path="admin/tests/create" element={<CreateTest />} />
+              <Route path="admin/tests/schedule" element={<TestSchedule />} />
+
+              {/* Question Section */}
+              <Route path="admin/questions/all" element={<AllQuestions />} />
+              <Route path="admin/questions/add" element={<AddQuestion />} />
+              <Route path="admin/questions/import" element={<ImportQuestions />} />
+
+              {/* Student Section */}
+              <Route path="admin/students/all" element={<AllStudents />} />
+              <Route path="admin/students/performance" element={<StudentPerformance />} />
+
+              {/* Other Pages */}
+              <Route path="admin/results" element={<AdminResults />} />
+              <Route path="admin/leaderboard" element={<AdminLeaderboard />} />
+              <Route path="admin/analytics" element={<AdminAnalytics />} />
+              <Route path="admin/settings" element={<Settings />} />
+              <Route path="admin/profile" element={<AdminProfile />} />
             </Route>
 
 
