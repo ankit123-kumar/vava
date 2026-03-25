@@ -37,7 +37,7 @@ export default function HeroSection({ theme }) {
   return (
     <section
       id="home"
-      className={`relative w-full min-h-screen bg-linear-to-r ${theme === 'dark' ? 'from-blue-400 via-violet-300 to-fuchsia-400' : 'from-indigo-100 via-pink-100 to-purple-100'} text-gray-900 overflow-hidden flex items-center pt-24`}
+      className={`relative w-full min-h-[70vh] md:min-h-screen bg-linear-to-r ${theme === 'dark' ? 'from-blue-400 via-violet-300 to-fuchsia-400' : 'from-indigo-100 via-pink-100 to-purple-100'} text-gray-900 overflow-hidden flex items-center pt-16 md:pt-24`}
     >
       {/* Background Floating Shapes */}
       <div className="absolute top-20 left-10 w-40 h-40 bg-pink-300/30 rounded-full blur-3xl animate-float-slow"></div>
@@ -96,12 +96,43 @@ export default function HeroSection({ theme }) {
           className="flex-1 h-full flex justify-center md:justify-end mt-10 md:mt-0 relative"
         >
           <img
-            src="/heroback.png"
+            src="/herobackNew.png"
             alt="Learning Illustration"
             className="h-[60%] md:h-[80%] w-auto object-contain drop-shadow-2xl"
+
+            
           />
+
+          {/* Floating Icons
+<motion.div
+  animate={{ y: [0, -15, 0] }}
+  transition={{ duration: 4, repeat: Infinity }}
+  className="absolute top-10 left-10 text-yellow-400"
+>
+  📚
+</motion.div>
+
+<motion.div
+  animate={{ y: [0, 20, 0] }}
+  transition={{ duration: 5, repeat: Infinity }}
+  className="absolute bottom-10 right-10 text-pink-400"
+>
+  ✏️
+</motion.div>
+
+<motion.div
+  animate={{ x: [0, 20, 0] }}
+  transition={{ duration: 6, repeat: Infinity }}
+  className="absolute top-1/2 left-0 text-indigo-400"
+>
+  🎓
+</motion.div> */}
         </motion.div>
       </div>
+
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce text-xl">
+  ↓
+</div>
     </section>
   );
 }

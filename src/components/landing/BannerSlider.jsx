@@ -76,34 +76,49 @@ export default function BannerSlider() {
                   />
                 </div>
 
-                {/* 🔥 Text */}
-                <div
-                  className={`absolute bottom-6 left-6 z-10 max-w-[80%]
-                  ${theme === "dark" ? "text-gray-100" : "text-white"}`}
-                >
-                  <h2 className="text-2xl md:text-4xl font-extrabold drop-shadow-lg leading-tight">
-                    Admission Open 🎓
-                  </h2>
+                {/* 🔥 Text (Desktop Overlay) */}
+<div
+  className={`hidden md:block absolute bottom-6 left-6 z-10 max-w-[80%]
+  ${theme === "dark" ? "text-gray-100" : "text-white"}`}
+>
+  <h2 className="text-2xl md:text-4xl font-extrabold drop-shadow-lg leading-tight">
+    Admission Open 🎓
+  </h2>
 
-                  <p
-                    className={`text-sm md:text-lg mt-2 drop-shadow-md
-                    ${
-                      theme === "dark"
-                        ? "text-gray-300"
-                        : "text-gray-200"
-                    }`}
-                  >
-                    Play Group to 12th | Limited Seats Available
-                  </p>
+  <p
+    className={`text-sm md:text-lg mt-2 drop-shadow-md
+    ${theme === "dark" ? "text-gray-300" : "text-gray-200"}`}
+  >
+    Play Group to 12th | Limited Seats Available
+  </p>
 
-                  {/* CTA */}
-                  <button
-                    onClick={() => (window.location.href = "/contact")}
-                    className="mt-4 px-5 py-2 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-300 transition"
-                  >
-                    Enroll Now
-                  </button>
-                </div>
+  <button
+    onClick={() => (window.location.href = "/contact")}
+    className="mt-4 px-5 py-2 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-300 transition"
+  >
+    Enroll Now
+  </button>
+</div>
+
+{/* 🔥 Mobile Text (Below Image) */}
+<div
+  className={`block md:hidden p-4 text-center
+  ${theme === "dark" ? "bg-slate-900 text-white" : "bg-white text-black"}`}
+>
+  <h2 className="text-lg font-bold">
+    Admission Open 🎓
+  </h2>
+
+  <p className="text-sm mt-1">
+    Play Group to 12th | Limited Seats Available
+  </p>
+
+  <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50 md:hidden">
+  <button className="bg-yellow-400 px-6 py-3 rounded-full shadow-lg">
+    Enroll Now
+  </button>
+</div>
+</div>
 
               </div>
             </SwiperSlide>

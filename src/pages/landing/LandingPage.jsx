@@ -17,7 +17,7 @@ export default function LandingPage() {
       <HowItWorks theme={theme} />
       <Testimonials theme={theme} />
       <Instructors theme={theme} />
-      <Pricing theme={theme} />
+      {/* <Pricing theme={theme} /> */}
       <FAQ theme={theme} />
       <CTA theme={theme} />
       <Footer theme={theme} />
