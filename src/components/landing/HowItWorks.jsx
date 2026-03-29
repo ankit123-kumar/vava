@@ -1,82 +1,115 @@
-import { UserPlus, BookOpen, PlayCircle, Award } from "lucide-react";
+import { Users, BookOpen, ClipboardCheck, Award } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HowItWorks({ theme }) {
   const steps = [
     {
-      icon: <UserPlus className="w-10 h-10 text-indigo-600" />,
-      title: "Sign Up",
-      desc: "Create your free account in just a few clicks and join the community.",
+      icon: <Users size={30} />,
+      title: "Join Our Institute",
+      desc: "Visit our coaching center and enroll in your preferred course.",
     },
     {
-      icon: <BookOpen className="w-10 h-10 text-indigo-600" />,
-      title: "Browse Courses",
-      desc: "Explore 500+ expert-led courses across multiple categories.",
+      icon: <BookOpen size={30} />,
+      title: "Attend Daily Classes",
+      desc: "Structured offline classes with expert teachers.",
     },
     {
-      icon: <PlayCircle className="w-10 h-10 text-indigo-600" />,
-      title: "Start Learning",
-      desc: "Access interactive lessons, quizzes, and real-time mentorship.",
+      icon: <ClipboardCheck size={30} />,
+      title: "Tests & Doubt Solving",
+      desc: "Weekly tests with performance tracking and doubt sessions.",
     },
     {
-      icon: <Award className="w-10 h-10 text-indigo-600" />,
-      title: "Get Certified",
-      desc: "Earn a shareable certificate to boost your career and skills.",
+      icon: <Award size={30} />,
+      title: "Achieve Success",
+      desc: "Crack exams confidently and build a strong future.",
     },
   ];
 
   return (
     <section
       id="how-it-works"
-      className={`py-20 ${theme === "dark" ? "bg-slate-950" : "bg-gray-50"
-        }`}
+      className={`relative py-24 overflow-hidden ${
+        theme === "dark" ? "bg-slate-950" : "bg-gray-50"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Section Heading */}
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-400/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-400/20 blur-3xl rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        
+        {/* Heading */}
         <h2
-          className={`text-3xl md:text-4xl font-extrabold ${theme === "dark" ? "text-slate-100" : "text-gray-800"
-            }`}
+          className={`text-4xl md:text-5xl font-extrabold ${
+            theme === "dark" ? "text-slate-100" : "text-gray-800"
+          }`}
         >
-          How It{" "}
-          <span className={theme === "dark" ? "text-indigo-400" : "text-indigo-600"}>
-            Works
+          How Our{" "}
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Coaching Works
           </span>
         </h2>
+
         <p
-          className={`mt-3 max-w-2xl mx-auto ${theme === "dark" ? "text-slate-400" : "text-gray-600"
-            }`}
+          className={`mt-4 max-w-2xl mx-auto ${
+            theme === "dark" ? "text-slate-400" : "text-gray-600"
+          }`}
         >
-          Get started with our platform in just a few simple steps and accelerate your learning journey.
+          Simple offline process designed to guide you step-by-step towards success.
         </p>
 
-        {/* Steps Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Connector Line */}
+        <div className="hidden md:block absolute top-[58%] left-0 w-full h-[2px] bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 opacity-30"></div>
+
+        {/* Steps */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-10 relative">
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`flex flex-col items-center rounded-2xl shadow-md p-6 hover:shadow-xl transition-shadow ${theme === "dark"
-                  ? "bg-slate-900 border border-slate-800 hover:shadow-indigo-500/10"
-                  : "bg-white"
-                }`}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             >
+              {/* Card */}
               <div
-                className={`w-16 h-16 flex items-center justify-center rounded-full mb-4 ${theme === "dark" ? "bg-indigo-500/10 text-indigo-400" : "bg-indigo-100 text-indigo-600"
-                  }`}
+                className={`rounded-2xl p-6 backdrop-blur-xl h-full ${
+                  theme === "dark"
+                    ? "bg-slate-900/80 border border-white/10"
+                    : "bg-white"
+                }`}
               >
-                {step.icon}
+                {/* Step Number */}
+                <div className="absolute -top-4 -left-4 w-9 h-9 flex items-center justify-center text-xs font-bold rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white shadow-lg">
+                  0{index + 1}
+                </div>
+
+                {/* Icon */}
+                <div className="mb-5 text-indigo-500 group-hover:scale-110 transition">
+                  {step.icon}
+                </div>
+
+                {/* Title */}
+                <h3
+                  className={`text-lg font-semibold ${
+                    theme === "dark" ? "text-slate-100" : "text-gray-800"
+                  }`}
+                >
+                  {step.title}
+                </h3>
+
+                {/* Desc */}
+                <p
+                  className={`mt-2 text-sm ${
+                    theme === "dark" ? "text-slate-400" : "text-gray-600"
+                  }`}
+                >
+                  {step.desc}
+                </p>
               </div>
-              <h3
-                className={`text-lg font-semibold ${theme === "dark" ? "text-slate-100" : "text-gray-800"
-                  }`}
-              >
-                {step.title}
-              </h3>
-              <p
-                className={`mt-2 text-sm ${theme === "dark" ? "text-slate-400" : "text-gray-600"
-                  }`}
-              >
-                {step.desc}
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

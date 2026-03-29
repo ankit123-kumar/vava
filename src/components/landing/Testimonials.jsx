@@ -1,101 +1,114 @@
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Testimonials({ theme }) {
   const reviews = [
     {
-      name: "Aarav Sharma",
-      role: "Software Engineer",
+      name: "Aman Gupta",
+      role: "Class 12 Student",
       feedback:
-        "This platform completely changed the way I learn. The courses are structured, easy to follow, and the mentors are super helpful.",
+        "Best coaching in our area. Teachers explain concepts very clearly and doubt sessions helped me a lot.",
       rating: 5,
-      image:
-        "https://randomuser.me/api/portraits/men/32.jpg",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
-      name: "Priya Verma",
-      role: "Data Analyst",
+      name: "Sneha Verma",
+      role: "NEET Aspirant",
       feedback:
-        "I loved the interactive lessons and quizzes. The hands-on approach made it easy to apply what I learned in real projects.",
+        "Regular tests and personal attention made a big difference in my preparation. Highly recommended!",
+      rating: 5,
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      name: "Rohit Singh",
+      role: "Class 10 Student",
+      feedback:
+        "Friendly teachers and disciplined environment. My marks improved a lot after joining.",
       rating: 4,
-      image:
-        "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-    {
-      name: "Rohit Mehta",
-      role: "Student",
-      feedback:
-        "Affordable, practical, and effective. The certificate helped me land my first internship in data science!",
-      rating: 5,
-      image:
-        "https://randomuser.me/api/portraits/men/51.jpg",
+      image: "https://randomuser.me/api/portraits/men/51.jpg",
     },
   ];
 
   return (
     <section
       id="testimonials"
-      className={`py-20 ${theme === "dark" ? "bg-slate-950" : "bg-white"
-        }`}
+      className={`relative py-24 ${
+        theme === "dark" ? "bg-slate-950" : "bg-white"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Heading */}
+      {/* Glow */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-400/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-400/20 blur-3xl rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <h2
-          className={`text-3xl md:text-4xl font-extrabold ${theme === "dark" ? "text-slate-100" : "text-gray-800"
-            }`}
+          className={`text-4xl md:text-5xl font-extrabold ${
+            theme === "dark" ? "text-slate-100" : "text-gray-800"
+          }`}
         >
           What Our{" "}
-          <span className={theme === "dark" ? "text-indigo-400" : "text-indigo-600"}>
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Students Say
           </span>
         </h2>
+
         <p
-          className={`mt-3 max-w-2xl mx-auto ${theme === "dark" ? "text-slate-400" : "text-gray-600"
-            }`}
+          className={`mt-4 max-w-2xl mx-auto ${
+            theme === "dark" ? "text-slate-400" : "text-gray-600"
+          }`}
         >
-          Hear from learners who transformed their careers with our courses.
+          Real feedback from our classroom students.
         </p>
 
-        {/* Reviews Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
           {reviews.map((review, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow ${theme === "dark"
-                  ? "bg-slate-900 border border-slate-800 hover:shadow-indigo-500/10"
-                  : "bg-gray-50"
-                }`}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             >
-              {/* User Image */}
-              <img
-                src={review.image}
-                alt={review.name}
-                className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
-              />
-              {/* Name + Role */}
-              <h3
-                className={`text-lg font-semibold ${theme === "dark" ? "text-slate-100" : "text-gray-800"
-                  }`}
+              <div
+                className={`rounded-2xl p-8 backdrop-blur-xl h-full ${
+                  theme === "dark"
+                    ? "bg-slate-900/80 border border-white/10"
+                    : "bg-gray-50"
+                }`}
               >
-                {review.name}
-              </h3>
+                <img
+                  src={review.image}
+                  alt={review.name}
+                  className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+                />
 
-              <p className={theme === "dark" ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
-                {review.role}
-              </p>
-              {/* Feedback */}
-              <p
-                className={`mt-4 text-sm leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-gray-600"
+                <h3 className="text-lg font-semibold">{review.name}</h3>
+                <p className="text-sm text-indigo-500">{review.role}</p>
+
+                <p
+                  className={`mt-4 text-sm ${
+                    theme === "dark" ? "text-slate-300" : "text-gray-600"
                   }`}
-              >
-                “{review.feedback}”
-              </p>
-              {/* Rating */}
-              <div className="mt-4 flex justify-center">
-                {Array.from({ length: review.rating }).map((_, i) => (
-                  <Star className={`w-5 h-5 ${theme === "dark" ? "text-yellow-300 fill-yellow-300" : "text-yellow-400 fill-yellow-400"}`} />
-                ))}
+                >
+                  “{review.feedback}”
+                </p>
+
+                <div className="mt-4 flex justify-center">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-5 h-5 ${
+                        i < review.rating
+                          ? "text-yellow-400 fill-yellow-400"
+                          : "text-gray-300"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
